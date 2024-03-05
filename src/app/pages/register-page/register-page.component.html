@@ -1,0 +1,278 @@
+<div class="tw-flex tw-flex-col tw-items-center tw-my-20">
+    <div class="tw-w-[1124px] tw-flex tw-flex-col tw-items-center">
+        <div class="user-information">
+            <div class=" tw-relative">
+                <div class=" tw-w-full tw-h-96 tw-rounded-tl-lg tw-rounded-tr-lg  tw-object-cover"
+                    [class]="coverPhotoPreviewSrc === 'nan' ? 'tw-bg-rose-300' : 'tw-bg-transparent'">
+                    <img *ngIf="coverPhotoPreviewSrc !== 'nan'"
+                        class="tw--z-10 tw-w-full tw-h-96 tw-rounded-tl-lg tw-rounded-tr-lg  tw-object-cover tw-absolute"
+                        [src]="coverPhotoPreviewSrc" alt="cover-photo">
+                    <div id="button-container" class="tw-w-full tw-h-full tw-p-5 tw-flex tw-justify-end tw-items-end">
+                        <input class="tw-hidden" type="file" accept="image/*" (change)="onUploadCoverPhoto(coverInput)"
+                            #coverInput />
+                        <button (click)="coverInput.click()"
+                            class="tw-flex tw-justify-center tw-bg-gray-300 tw-p-2 tw-rounded-md">
+                            <img class="tw-w-6 tw-h-6 tw-mr-2" src="assets/camera.png" alt="camera" />
+                            EDIT COVER PHOTO
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="tw-flex tw-justify-center">
+                <div class="profile-container tw-z-10">
+                    <div id="profile" class="profile">
+                        <img *ngIf="profilePhotoPreviewSrc !== 'nan'"
+                            class="profile-preview tw-rounded-full tw-absolute tw--z-10" [src]="profilePhotoPreviewSrc"
+                            alt="profile-preview" />
+                        <div class="tw-rounded-full tw-w-[360px] tw-h-[360px] tw-p-7 tw-flex tw-justify-end tw-items-end"
+                            [class]="profilePhotoPreviewSrc === 'nan' ? 'tw-bg-gray-500' : 'tw-bg-transparent'">
+                            <input class="tw-hidden" type="file" accept="image/*"
+                                (change)="onUploadProfilePhoto(profileInput)" #profileInput />
+                            <button (click)="profileInput.click()"
+                                class="tw-flex tw-justify-center tw-bg-gray-300 tw-p-3 tw-rounded-full">
+                                <img class="tw-w-6 tw-h-6" src="assets/camera.png" alt="camera" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-container">
+                    <div class="form-row">
+                        <div class="form">
+                            <p>USERNAME</p>
+                            <input type="text" class="input-form tw-border-2 tw-border-gray-500 tw-rounded-md" #username>
+                        </div>
+                        <div class="form">
+                            <p>NICK NAME</p>
+                            <input type="text" class="input-form tw-border-2 tw-border-gray-500 tw-rounded-md" #nickname>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form">
+                            <p>FIRST NAME</p>
+                            <input type="text" class="input-form tw-border-2 tw-border-gray-500 tw-rounded-md" #firstname>
+                        </div>
+                        <div class="form">
+                            <p>LAST NAME</p>
+                            <input type="text" class="input-form tw-border-2 tw-border-gray-500 tw-rounded-md" #lastname>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form">
+                            <p>POSITION</p>
+                            <input type="text" class="input-form tw-border-2 tw-border-gray-500 tw-rounded-md" #position>
+                        </div>
+                        <div class="form">
+                            <p>NATIONALITY</p>
+                            <input type="text" class="input-form tw-border-2 tw-border-gray-500 tw-rounded-md" #nationality>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form">
+                            <p>TELEPHONE NUMBER</p>
+                            <input type="text" class="input-form tw-border-2 tw-border-gray-500 tw-rounded-md" #telephoneNumber>
+                        </div>
+                        <div class="form">
+                            <p>STARTING DATE</p>
+                            <input type="date" class="input-form tw-border-2 tw-border-gray-500 tw-rounded-md" #startingDate>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-information tw-mt-20">
+            <div class="form-row">
+                <div class="form tw-w-full">
+                    <p>ADDRESS</p>
+                    <input type="text" class="input-form tw-border-2 tw-border-gray-500 tw-rounded-md" #address>
+                </div>
+            </div>
+            <div class="form-row tw-justify-between">
+                <div class="form">
+                    <p>SUB DISTRICT</p>
+                    <input type="text" class="input-form tw-border-2 tw-border-gray-500 tw-rounded-md" #subDistrict>
+                </div>
+                <div class="form">
+                    <p>DISTRICT</p>
+                    <input type="text" class="input-form tw-border-2 tw-border-gray-500 tw-rounded-md" #district>
+                </div>
+                <div class="form">
+                    <p>PROVINCE</p>
+                    <input type="text" class="input-form tw-border-2 tw-border-gray-500 tw-rounded-md" #province>
+                </div>
+                <div class="form">
+                    <p>POSTAL CODE</p>
+                    <input type="text" class="input-form tw-border-2 tw-border-gray-500 tw-rounded-md" #postalCode>
+                </div>
+            </div>
+            <div class="form-row tw-justify-between">
+                <div class="form tw-w-1/4">
+                    <p>FACEBOOK</p>
+                    <input type="text" class="input-form tw-border-2 tw-border-gray-500 tw-rounded-md" #facebook>
+                </div>
+                <div class="form tw-w-1/4">
+                    <p>LINE ID</p>
+                    <input type="text" class="input-form tw-border-2 tw-border-gray-500 tw-rounded-md" #lineID>
+                </div>
+                <div class="form tw-w-1/4">
+                    <p>INSTAGRAM</p>
+                    <input type="text" class="input-form tw-border-2 tw-border-gray-500 tw-rounded-md" #instagram>
+                </div>
+            </div>
+        </div>
+        <div class="education-information tw-mt-20">
+            <div class="detail">
+                <div class="form tw-mb-4">
+                    <p class="tw-w-48">YEAR</p>
+                    <input type="number" class="input-form tw-border-2 tw-border-gray-500 tw-rounded-md" #year>
+                </div>
+                <div class="form">
+                    <p class="tw-w-48">SCHOOL / UNIVERSITY</p>
+                    <input type="text" class="input-form tw-border-2 tw-border-gray-500 tw-rounded-md" #name>
+                </div>
+            </div>
+            <button (click)="addEducation($event,year,name)"
+                class=" tw-w-40 tw-rounded-md tw-border-2 tw-mt-8 tw-border-sky-500 tw-text-sky-500">ADD
+                EDUCATION</button>
+            <div class="">
+                <div class="tw-mt-4 tw-flex tw-items-center" *ngFor="let education of educationInformationList">
+                    <p class="tw-mr-5" #edYear>{{education.year}}</p>
+                    <div class="tw-w-2 tw-h-2 tw-bg-sky-500 tw-rounded-full"></div>
+                    <p class="tw-ml-5" #edName>{{education.name}}</p>
+                    <button (click)="removeEducation($event,edYear,edName)"
+                        class="tw-ml-4"><div class="tw-relative tw-w-4 tw-h-4 tw--mt-3">
+                            <div
+                                class="tw-absolute tw-left-1/2 tw-top-1/2 tw-w-px tw-h-full tw-bg-black tw-transform tw--translate-x-1/2 tw-rotate-45">
+                            </div>
+                            <div
+                                class="tw-absolute tw-left-1/2 tw-top-1/2 tw-w-px tw-h-full tw-bg-black tw-transform tw--translate-x-1/2 tw--rotate-45">
+                            </div>
+                        </div></button>
+                </div>
+            </div>
+        </div>
+        <div class="experience-information tw-mt-20">
+            <div class="detail">
+                <div class="form tw-mb-4">
+                    <p class="tw-w-48">DETAIL</p>
+                    <input type="text" class="input-form tw-border-2 tw-border-gray-500 tw-rounded-md" #detail>
+                </div>
+                <div class="form">
+                    <p class="tw-w-48">POSITION</p>
+                    <input type="text" class="input-form tw-border-2 tw-border-gray-500 tw-rounded-md" #exPosition>
+                </div>
+            </div>
+            <button (click)="addExperience($event,detail,exPosition)"
+                class=" tw-w-40 tw-rounded-md tw-border-2 tw-mt-8 tw-border-sky-500 tw-text-sky-500">ADD
+                EXPERIENCE</button>
+            <div class="">
+                <div class="tw-mt-4 tw-flex tw-items-center" *ngFor="let experience of experienceInformationList">
+                    <div class="tw-w-2 tw-h-2 tw-bg-sky-500 tw-rounded-full"></div>
+                    <p class="tw-ml-5" #edDetail>{{experience.detail}}</p>
+                    <p class="tw-ml-5" #edPosition>{{experience.position}}</p>
+                    <button class="tw-ml-4" (click)="removeExperience($event,edDetail,edPosition)">
+                        <div class="tw-relative tw-w-4 tw-h-4 tw--mt-3">
+                            <div
+                                class="tw-absolute tw-left-1/2 tw-top-1/2 tw-w-px tw-h-full tw-bg-black tw-transform tw--translate-x-1/2 tw-rotate-45">
+                            </div>
+                            <div
+                                class="tw-absolute tw-left-1/2 tw-top-1/2 tw-w-px tw-h-full tw-bg-black tw-transform tw--translate-x-1/2 tw--rotate-45">
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="skill-information tw-mt-20">
+            <div class="detail">
+                <div class="form tw-mb-4">
+                    <p class="tw-w-48">NAME</p>
+                    <input type="text" class="input-form tw-border-2 tw-border-gray-500 tw-rounded-md" #skillname>
+                </div>
+                <div class="form">
+                    <p class="tw-w-48">LEVEL</p>
+                    <input type="number" class="input-form tw-border-2 tw-border-gray-500 tw-rounded-md" #level>
+                </div>
+            </div>
+            <button (click)="addSkill($event,skillname,level)"
+                class=" tw-w-40 tw-rounded-md tw-border-2 tw-mt-8 tw-border-sky-500 tw-text-sky-500">ADD
+                SKILL</button>
+            <div class="">
+                <div class="tw-mt-4 tw-flex tw-items-center" *ngFor="let skill of skillInformationList">
+                    <p class="tw-w-40 tw-mr-10" #edSkillName>{{skill.name}}</p>
+                    <p class="tw-ml-10" #edLevel>{{skill.level}}</p>
+                    <div class="progress-container tw-ml-20 tw-mr-10">
+                        <div class="progress-bar" [style.width.%]="skill.level*10"></div>
+                    </div>
+                    <button class="tw-ml-4" (click)="removeSkill($event,edSkillName,edLevel)">
+                        <div class="tw-relative tw-w-4 tw-h-4 tw--mt-3">
+                            <div
+                                class="tw-absolute tw-left-1/2 tw-top-1/2 tw-w-px tw-h-full tw-bg-black tw-transform tw--translate-x-1/2 tw-rotate-45">
+                            </div>
+                            <div
+                                class="tw-absolute tw-left-1/2 tw-top-1/2 tw-w-px tw-h-full tw-bg-black tw-transform tw--translate-x-1/2 tw--rotate-45">
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="interests-information tw-mt-20">
+            <div class="detail">
+                <div class="form tw-mb-4">
+                    <p class="tw-w-48">INTEREST</p>
+                    <input type="text" class="input-form tw-border-2 tw-border-gray-500 tw-rounded-md" #interest>
+                </div>
+            </div>
+            <button (click)="addInterest($event,interest)"
+                class=" tw-w-40 tw-rounded-md tw-border-2 tw-mt-8 tw-border-sky-500 tw-text-sky-500">ADD
+                INTEREST</button>
+            <div class="tw-flex tw-mt-4">
+                <div class="tw-mt-4 tw-flex tw-items-center tw-mr-6 tw-rounded-3xl tw-bg-sky-500 tw-text-white tw-p-2"
+                    *ngFor="let interest of interestInformationList">
+                    <p class="tw-mr-1" #edInterest>{{interest}}</p>
+                    <button class="tw-ml-1" (click)="removeInterest($event,edInterest)">
+                        <div class="tw-relative tw-w-4 tw-h-4 tw--mt-3">
+                            <div
+                                class="tw-absolute tw-left-1/2 tw-top-1/2 tw-w-px tw-h-full tw-bg-white tw-transform tw--translate-x-1/2 tw-rotate-45">
+                            </div>
+                            <div
+                                class="tw-absolute tw-left-1/2 tw-top-1/2 tw-w-px tw-h-full tw-bg-white tw-transform tw--translate-x-1/2 tw--rotate-45">
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="guild-information tw-mt-20">
+            <div class="detail">
+                <div class="form tw-mb-4">
+                    <p class="tw-w-48">GUILD</p>
+                    <input type="text" class="input-form tw-border-2 tw-border-gray-500 tw-rounded-md" #guild>
+                </div>
+            </div>
+            <button (click)="addGuild($event,guild)"
+                class=" tw-w-40 tw-rounded-md tw-border-2 tw-mt-8 tw-border-sky-500 tw-text-sky-500">ADD
+                GUILD</button>
+            <div class="tw-flex tw-mt-4">
+                <div class="tw-mt-4 tw-flex tw-items-center tw-mr-6 tw-rounded-3xl tw-bg-sky-500 tw-text-white tw-p-2"
+                    *ngFor="let guild of guildInformationList">
+                    <p class="tw-mr-1" #edGuild>{{guild}}</p>
+                    <button class="tw-ml-1" (click)="removeGuild($event,edGuild)">
+                        <div class="tw-relative tw-w-4 tw-h-4 tw--mt-3">
+                            <div
+                                class="tw-absolute tw-left-1/2 tw-top-1/2 tw-w-px tw-h-full tw-bg-white tw-transform tw--translate-x-1/2 tw-rotate-45">
+                            </div>
+                            <div
+                                class="tw-absolute tw-left-1/2 tw-top-1/2 tw-w-px tw-h-full tw-bg-white tw-transform tw--translate-x-1/2 tw--rotate-45">
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="submit-form">
+            <button class="tw-bg-red-500 tw-py-1 tw-px-2 tw-rounded-lg tw-text-2xl tw-text-white" (click)="router.navigate(['/'])">cancel</button>
+            <button class="tw-bg-green-500 tw-py-1 tw-px-2 tw-rounded-lg tw-text-2xl tw-text-white"(click)="submitData(username,nickname,firstname,lastname,position,nationality,telephoneNumber,startingDate,address,subDistrict,district,province,postalCode,facebook,lineID,instagram)" >confirm</button>
+        </div>
+    </div>
+</div>

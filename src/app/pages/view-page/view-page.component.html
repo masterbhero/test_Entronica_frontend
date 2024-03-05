@@ -1,0 +1,177 @@
+<div class="tw-flex tw-flex-col tw-items-center tw-my-20">
+    <div class="tw-w-[1124px] tw-flex tw-flex-col tw-items-center">
+        <button class="tw-text-white tw-bg-gray-500 tw-p-2 tw-rounded-2xl tw-mb-5 tw-mr-auto"
+            (click)="router.navigate(['/'], { replaceUrl: true })">BACK</button>
+        <div class="user-information">
+            <div class=" tw-relative">
+                <div class=" tw-w-full tw-h-96 tw-rounded-tl-lg tw-rounded-tr-lg  tw-object-cover"
+                    [class]="(coverPhotoPreviewSrc === 'nan' || coverPhotoPreviewSrc === '') ? 'tw-bg-rose-300' : 'tw-bg-transparent'">
+                    <img *ngIf="coverPhotoPreviewSrc !== 'nan'"
+                        class="tw--z-10 tw-w-full tw-h-96 tw-rounded-tl-lg tw-rounded-tr-lg  tw-object-cover tw-absolute"
+                        [src]="coverPhotoPreviewSrc" alt="cover-photo">
+                </div>
+            </div>
+            <div class="tw-flex tw-justify-center">
+                <div class="profile-container tw-z-10">
+                    <div id="profile" class="profile">
+                        <img *ngIf="profilePhotoPreviewSrc !== 'nan'"
+                            class="profile-preview tw-rounded-full tw-absolute tw--z-10" [src]="profilePhotoPreviewSrc"
+                            alt="profile-preview" />
+                        <div class="tw-rounded-full tw-w-[360px] tw-h-[360px] tw-p-7 tw-flex tw-justify-end tw-items-end"
+                            [class]="(profilePhotoPreviewSrc === 'nan' || profilePhotoPreviewSrc === '') ? 'tw-bg-gray-500' : 'tw-bg-transparent'">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-container">
+                    <div class="form-row">
+                        <div class="form">
+                            <p>USERNAME</p>
+                            <input [value]="usernameValue" disabled type="text"
+                                class="input-form tw-border-2 tw-pl-2 tw-border-gray-500 tw-rounded-md" #username>
+                        </div>
+                        <div class="form">
+                            <p>NICK NAME</p>
+                            <input [value]="nicknameValue" disabled type="text"
+                                class="input-form tw-border-2 tw-pl-2 tw-border-gray-500 tw-rounded-md" #nickname>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form">
+                            <p>FIRST NAME</p>
+                            <input [value]="firstnameValue" disabled type="text" type="text"
+                                class="input-form tw-border-2 tw-pl-2 tw-border-gray-500 tw-rounded-md" #firstname>
+                        </div>
+                        <div class="form">
+                            <p>LAST NAME</p>
+                            <input [value]="lastnameValue" disabled type="text" type="text"
+                                class="input-form tw-border-2 tw-pl-2 tw-border-gray-500 tw-rounded-md" #lastname>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form">
+                            <p>POSITION</p>
+                            <input [value]="positionValue" disabled type="text" type="text"
+                                class="input-form tw-border-2 tw-pl-2 tw-border-gray-500 tw-rounded-md" #position>
+                        </div>
+                        <div class="form">
+                            <p>NATIONALITY</p>
+                            <input [value]="nationalityValue" disabled type="text" type="text"
+                                class="input-form tw-border-2 tw-pl-2 tw-border-gray-500 tw-rounded-md" #nationality>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form">
+                            <p>TELEPHONE NUMBER</p>
+                            <input [value]="telephoneNumberValue" disabled type="text" type="text"
+                                class="input-form tw-border-2 tw-pl-2 tw-border-gray-500 tw-rounded-md"
+                                #telephoneNumber>
+                        </div>
+                        <div class="form">
+                            <p>STARTING DATE</p>
+                            <input [value]="startingDateValue" disabled type="text" type="text"
+                                class="input-form tw-border-2 tw-pl-2 tw-border-gray-500 tw-rounded-md" #startingDate>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-information tw-mt-20">
+            <div class="form-row">
+                <div class="form tw-w-full">
+                    <p>ADDRESS</p>
+                    <input [value]="addressValue" disabled type="text"
+                        class="input-form tw-border-2 tw-pl-2 tw-border-gray-500 tw-rounded-md" #address>
+                </div>
+            </div>
+            <div class="form-row tw-justify-between">
+                <div class="form">
+                    <p>SUB DISTRICT</p>
+                    <input [value]="subDistrictValue" disabled type="text"
+                        class="input-form tw-border-2 tw-pl-2 tw-border-gray-500 tw-rounded-md" #subDistrict>
+                </div>
+                <div class="form">
+                    <p>DISTRICT</p>
+                    <input [value]="districtValue" disabled type="text"
+                        class="input-form tw-border-2 tw-pl-2 tw-border-gray-500 tw-rounded-md" #district>
+                </div>
+                <div class="form">
+                    <p>PROVINCE</p>
+                    <input [value]="provinceValue" disabled type="text"
+                        class="input-form tw-border-2 tw-pl-2 tw-border-gray-500 tw-rounded-md" #province>
+                </div>
+                <div class="form">
+                    <p>POSTAL CODE</p>
+                    <input [value]="postalCodeValue" disabled type="text"
+                        class="input-form tw-border-2 tw-pl-2 tw-border-gray-500 tw-rounded-md" #postalCode>
+                </div>
+            </div>
+            <div class="form-row tw-justify-between">
+                <div class="form tw-w-1/4">
+                    <p>FACEBOOK</p>
+                    <input [value]="facebookValue" type="text"
+                        class="input-form tw-border-2 tw-pl-2 tw-border-gray-500 tw-rounded-md" #facebook>
+                </div>
+                <div class="form tw-w-1/4">
+                    <p>LINE ID</p>
+                    <input [value]="lineIDValue" type="text"
+                        class="input-form tw-border-2 tw-pl-2 tw-border-gray-500 tw-rounded-md" #lineID>
+                </div>
+                <div class="form tw-w-1/4">
+                    <p>INSTAGRAM</p>
+                    <input [value]="instagramValue" type="text"
+                        class="input-form tw-border-2 tw-pl-2 tw-border-gray-500 tw-rounded-md" #instagram>
+                </div>
+            </div>
+        </div>
+        <div class="education-information tw-mt-20">
+            <div class="">
+                <div>EDUCATION</div>
+                <div class="tw-mt-4 tw-flex tw-items-center" *ngFor="let education of educations">
+                    <p class="tw-mr-5" #edYear>{{education.year}}</p>
+                    <div class="tw-w-2 tw-h-2 tw-bg-sky-500 tw-rounded-full"></div>
+                    <p class="tw-ml-5" #edName>{{education.name}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="experience-information tw-mt-20">
+            <div class="">
+                <div>EXPERIENCE</div>
+                <div class="tw-mt-4 tw-flex tw-items-center" *ngFor="let experience of experiences">
+                    <div class="tw-w-2 tw-h-2 tw-bg-sky-500 tw-rounded-full"></div>
+                    <p class="tw-ml-5" #edDetail>{{experience.detail}}</p>
+                    <p class="tw-ml-5" #edPosition>{{experience.position}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="skill-information tw-mt-20">
+            <div class="">
+                <div>SKILL</div>
+                <div class="tw-mt-4 tw-flex tw-items-center" *ngFor="let skill of skills">
+                    <p class="tw-w-40 tw-mr-10" #edSkillName>{{skill.name}}</p>
+                    <p class="tw-ml-10" #edLevel>{{skill.level}}</p>
+                    <div class="progress-container tw-ml-20 tw-mr-10">
+                        <div class="progress-bar" [style.width.%]="skill.level*10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="interests-information tw-mt-20">
+            <div>INTEREST</div>
+            <div class="tw-flex tw-mt-4">
+                <div class="tw-mt-4 tw-flex tw-items-center tw-mr-6 tw-rounded-3xl tw-bg-sky-500 tw-text-white tw-p-2"
+                    *ngFor="let interest of interests">
+                    <p class="tw-mr-1" #edInterest>{{interest}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="guild-information tw-mt-20">
+            <div>GUILD</div>
+            <div class="tw-flex tw-mt-4">
+                <div class="tw-mt-4 tw-flex tw-items-center tw-mr-6 tw-rounded-3xl tw-bg-sky-500 tw-text-white tw-p-2"
+                    *ngFor="let guild of guildInformationList">
+                    <p class="tw-mr-1" #edGuild>{{guild}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

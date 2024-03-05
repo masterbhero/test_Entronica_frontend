@@ -1,0 +1,141 @@
+.user-information {
+    width: 100%;
+    border-radius: 8px;
+    @apply tw-shadow-2xl;
+
+    .profile-container {
+        display: flex;
+        justify-content: center;
+        margin-right: 120px;
+
+        .profile {
+            width: 368px;
+            height: 368px;
+            @apply tw-rounded-full tw--mt-64 tw-border-4 tw-border-white;
+
+            .profile-preview {
+                width: 360px;
+                height: 360px;
+            }
+        }
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 480px;
+
+        .form-row {
+            display: flex;
+            margin-top: 20px;
+
+            .form {
+                margin-right: 80px;
+
+                .input-form {
+                    width: 200px;
+                }
+            }
+        }
+    }
+}
+
+.contact-information {
+    display: flex;
+    flex-direction: column;
+    @apply tw-shadow-2xl tw-p-10;
+    border-radius: 8px;
+    width: 100%;
+
+    .form-row {
+        width: 100%;
+        display: flex;
+        margin-top: 20px;
+
+        .form {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+.education-information {
+    display: flex;
+    flex-direction: column;
+    @apply tw-shadow-2xl tw-p-10;
+    border-radius: 8px;
+    width: 100%;
+
+    .detail {
+        width: 50%;
+
+        .form {
+            display: flex;
+        }
+    }
+}
+
+.experience-information {
+    display: flex;
+    flex-direction: column;
+    @apply tw-shadow-2xl tw-p-10;
+    border-radius: 8px;
+    width: 100%;
+
+    .detail {
+        width: 50%;
+
+        .form {
+            display: flex;
+        }
+    }
+}
+
+.skill-information {
+    display: flex;
+    flex-direction: column;
+    @apply tw-shadow-2xl tw-p-10;
+    border-radius: 8px;
+    width: 100%;
+
+    .progress-container {
+        width: 200px;
+        height: 20px;
+        background-color: #f0f0f0;
+        border-radius: 4px;
+    }
+
+    .progress-bar {
+        height: 100%;
+        background-color: #007bff;
+        border-radius: 4px;
+        transition: width 0.5s ease;
+        /* Add smooth transition effect */
+    }
+}
+
+.interests-information {
+    display: flex;
+    flex-direction: column;
+    @apply tw-shadow-2xl tw-p-10;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.guild-information {
+    display: flex;
+    flex-direction: column;
+    @apply tw-shadow-2xl tw-p-10;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.submit-form{
+    display: flex;
+    justify-content: space-around;
+    @apply tw-shadow-2xl tw-p-10;
+    border-radius: 8px;
+    width: 100%;
+}

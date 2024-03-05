@@ -1,0 +1,10 @@
+<router-outlet></router-outlet>
+<div *ngIf="isRootPath()" class="tw-ml-10 tw-mt-10">
+    <button class="tw-rounded-lg tw-border-2 tw-border-white tw-text-white tw-bg-sky-500 tw-p-2" (click)="router.navigate(['/register'])">register</button>
+    <div class="tw-mt-5 tw-mb-5">view list</div>
+    <div>
+        <div *ngFor="let name of nameList">
+            <button (click)="router.navigate(['/view'],{replaceUrl:true,queryParams:{name:name}})" class="tw-rounded-lg tw-border-2 tw-border-white tw-text-white tw-bg-sky-500 tw-p-2">{{name}}</button>
+        </div>
+    </div>
+</div>
