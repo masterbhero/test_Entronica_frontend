@@ -38,6 +38,10 @@ export class AppComponent {
       )
     }
   }
+
+  refresh(): void {
+    window.location.reload();
+  }
 }
 
 interface viewAllType {

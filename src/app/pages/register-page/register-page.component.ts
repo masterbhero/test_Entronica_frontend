@@ -268,6 +268,7 @@ export class RegisterPageComponent {
     this.http.post('http://localhost:3000/save',formData).subscribe(
       (res) => {
         console.log(res)
+        this.router.navigate(['/'],{replaceUrl:true})
       },
       (err) => {
         console.log(err)
